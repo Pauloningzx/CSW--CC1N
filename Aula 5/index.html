@@ -41,7 +41,65 @@
     <h2>Trecho de Código fonte</h2>
         <p>Neste exemplo vou demonstrar um trecho de código
             <pre> <code></p>
-
-
+                <pre>
+                    <code>
+                        import numpy as np
+            import pandas as pd
+            
+            # Função para detectar e remover outliers com base no IQR (Intervalo Interquartil)
+            def remove_outliers(df):    
+                # Calcular os quartis Q1 (25%) e Q3 (75%)
+                Q1 = df.quantile(0.25)
+                Q3 = df.quantile(0.75)
+                
+                # Calcular o intervalo interquartil (IQR)
+                IQR = Q3 - Q1
+                
+                # Definir limites inferior e superior para os dados
+                lower_limit = Q1 - 1.5 * IQR
+                upper_limit = Q3 + 1.5 * IQR
+                
+                # Filtrar os dados, removendo os outliers
+                filtered_df = df[(df >= lower_limit) & (df <= upper_limit)]
+                
+                # Remover linhas com valores NaN (resultantes de valores fora dos limites)
+                filtered_df = filtered_df.dropna()
+                
+                return filtered_df
+            
+            # Exemplo de dados com outliers
+            data = {
+                'coluna1': [10, 12, 14, 100, 15, 16, 18, 20, 25, 30],
+                'coluna2': [1, 3, 4, 5, 1000, 6, 7, 8, 9, 10]
+            }
+            
+            # Criar DataFrame
+            df = pd.DataFrame(data)
+            
+            # Mostrar dados originais
+            print("Dados originais:")
+            print(df)
+            
+            # Remover outliers
+            df_sem_outliers = remove_outliers(df)
+            
+            # Mostrar dados após remoção de outliers
+            print("\nDados após remoção de outliers:")
+            print(df_sem_outliers)
+            
+                    </code>
+                </pre>
+                <br>
+    <h2>Citações (quotation) simples</h2>
+        <p>Segundo Steve Jobs <q>A técnologia move o mundo</q></p>
+    <h2>Citações completas (livros)</h2>
+        <p>trecho do livro o pequeno príncipe</p> <blockquote> Todas as pessoas grandes foram um dia crianças – mas poucas se lembram disso. <cite>O pequeno Príncipe</cite> </blockquote> 
+        <br>
+    <h2>Abreviações</h2>
+        <p>Estamos estudando <abbr title="Hiper text Markup Lenguage">HTML</abbr> e <abbr title="Cascate Style Sheet">CSS</abbr></p>
+        <br>
+    <h2>Texto invertido</h2>
+        <p>Estou estudando HTML</p>
+        <p><bdo dir="rtl">Estou estudando HTML</bdo></p>
 </body>
 </html>
