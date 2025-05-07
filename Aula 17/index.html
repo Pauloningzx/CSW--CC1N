@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 17</title>
+    <style>
+        .form{ 
+            border-style: solid;
+            border-radius: 12px;
+            border-color: black;
+            border-width: 3px;
+            border-inline-end-width: 10px;
+            margin: 50px;
+            padding: 20px;
+            width: max-content;
+            display: inline-flex;
+            flex-direction:column;
+            flex-wrap: ; 
+                }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Formulario</h1>
+    <br>
+    <hr>
+    <section class="form">
+        <h1 style="text-align: center; height: auto;">Dados Pessoais</h1>
+    <form action="paulo.sstauffer@gmail.com" method="post"> 
+        <label for="Nome">Nome:</label>
+        <input type="text" name="nome-form" id="idnome"
+        value="" placeholder="Digite Seu Nome"> <br><br>
+        <label for="Email">E-mail:</label>
+        <input type="text" name="e-mail" id="idemailuser" 
+         value="" placeholder="Digite seu E-mail"><br><br>
+         <label for="text">Idade: </label>
+         <input type="text" name="idade" id="id_idade"
+         value="" placeholder="Digite Sua Idade"><br><br>
+         <label for="cor">Escolha uma cor: </label>
+         <input type="color" name="cor" id=""><br><br>
+         <label for="data">Data e Hora</label>
+         <input type="datetime-local" name="data" id="id-data" ><br><br>
+         <label for="text">Selecione um Arquivo</label><br>
+         <select name="Arquivo" id="id_arquivo" cols="100"> 
+         </select>
+    </form>
+</section>
+<section class="form">
+<form action="users">
+    <h1>Login</h1>
+    <label for="text">E-mail:</label><br>
+    <input type="email" name="email" id="idemail" value="" placeholder="Digite seu E-mail"><br><br>
+    <label for="Senha">Senha:</label><br>
+    <input type="password" name="senha" id="idsenhauser" value="" placeholder="Digite a Senha">
+
+</form>
+
+
+</section>
+<hr>
+</body>
+</html>
